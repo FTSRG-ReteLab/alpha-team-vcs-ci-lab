@@ -4,4 +4,4 @@ install: true
 os: linux
 
 script:
-  - ./gradle build --scan -s
+  - gradle build
