@@ -5,3 +5,5 @@ os: linux
 
 script:
   - gradle build
+jobs:
+  include:
