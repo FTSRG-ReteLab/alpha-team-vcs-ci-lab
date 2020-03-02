@@ -1,0 +1,9 @@
+language: java
+install: true
+
+os: linux
+
+script:
+  - gradle build
+jobs:
+  include:

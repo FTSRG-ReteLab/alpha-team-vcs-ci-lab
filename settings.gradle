@@ -5,3 +5,7 @@ include ':train-interfaces'
 include ':train-sensor'
 include ':train-system'
 include ':train-user'
+
+//compile group: 'com.google.guava', name: 'guava', version: '11.0.2'
+include 'train-tachograph'
+
