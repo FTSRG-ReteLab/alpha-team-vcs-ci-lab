@@ -20,7 +20,7 @@ public class TrainControllerImpl implements TrainController {
 				System.out.println("TrainControllerImpl timer running");
 				followSpeed();
 			}
-		}, 1000, 500);
+		}, 1000, 2500);
 	}
 	
 	@Override
