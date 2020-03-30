@@ -1,26 +1,27 @@
 package hu.bme.mit.train.controller;
 
 import hu.bme.mit.train.interfaces.TrainController;
-
-import java.util.Timer;
-import java.util.TimerTask;
+import java.lang.Thread;
 
 public class TrainControllerImpl implements TrainController {
 
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
-	private Timer timer;
-	
+	private Thread thread;
+
 	public TrainControllerImpl() {
-		timer = new Timer();
-		timer.schedule(new TimerTask() {
-			@Override
+		thread = new Thread() {
 			public void run() {
-				System.out.println("TrainControllerImpl timer running");
-				followSpeed();
+				thread.run();
+				try {
+					followSpeed();
+					thread.sleep(2500);
+				} catch (InterruptedException ex) {
+					ex.printStackTrace();
+				}
 			}
-		}, 1000, 2500);
+		};
 	}
 	
 	@Override
